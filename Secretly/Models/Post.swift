@@ -16,6 +16,8 @@ struct Post: Restable {
     let image: Image?
     var imageData: String?
     let user: User?
+    let liked: Bool
+    let likesCount: Int?
     let commentsCount: Int?
     let latitude: Double?
     let longitude: Double?
@@ -31,6 +33,8 @@ struct Post: Restable {
         self.latitude = latitude
         self.longitude = longitude
         self.user = nil
+        self.liked = false
+        self.likesCount = nil
         self.commentsCount = nil
         self.createdAt = nil
         self.updatedAt = nil

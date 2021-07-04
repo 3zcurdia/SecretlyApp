@@ -109,6 +109,7 @@
                 <outlet property="contentLabel" destination="Mh0-Gr-U1B" id="tTs-p1-j7k"/>
                 <outlet property="heartImage" destination="YLj-wF-CJ8" id="T03-Um-cyK"/>
                 <outlet property="imageView" destination="LcI-IM-E3b" id="vWk-OE-zm9"/>
+                <outlet property="likeButton" destination="uBE-OP-pwQ" id="YWY-6Q-yFC"/>
             </connections>
             <point key="canvasLocation" x="389.85507246376812" y="182.8125"/>
         </collectionViewCell>

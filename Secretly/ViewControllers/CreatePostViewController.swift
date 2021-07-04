@@ -22,19 +22,15 @@ class CreatePostViewController: UIViewController {
         let post = Post(content: contentField.text!, backgroundColor: colorField.text!)
         let postsEndpoint = RestClient<Post>(client: AmacaConfig.shared.httpClient, path: "/api/v1/posts")
 
-        do {
-            try postsEndpoint.create(model: post) { [unowned self] result in
-                switch result {
-                case .success(let post):
-                    print("there is a new post \(post?.id ?? 0)")
-                case .failure(let err):
-                    DispatchQueue.main.async {
-                        self.errorAlert(err)
-                    }
+        postsEndpoint.create(model: post) { [unowned self] result in
+            switch result {
+            case .success(let post):
+                print("there is a new post \(post?.id ?? 0)")
+            case .failure(let err):
+                DispatchQueue.main.async {
+                    self.errorAlert(err)
                 }
             }
-        } catch let err {
-            self.errorAlert(err)
         }
     }
 

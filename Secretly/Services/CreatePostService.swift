@@ -16,7 +16,7 @@ struct CreatePostService {
     }
 
     func create(_ model: Post, complete: @escaping (Result<Post?, Error>) -> Void ) {
-        try? endpoint.create(model: model) { result in
+        endpoint.create(model: model) { result in
             DispatchQueue.main.async { complete(result) }
         }
     }

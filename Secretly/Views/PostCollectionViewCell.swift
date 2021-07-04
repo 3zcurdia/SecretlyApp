@@ -10,15 +10,17 @@ import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "feedPostCell"
+    var likeService: LikeService?
     var post: Post? {
         didSet {
-           updateView()
+            updateView()
         }
     }
     @IBOutlet weak var heartImage: UIImageView!
     @IBOutlet weak var authorView: AuthorView!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var commentCounter: UILabel!
 
     weak var viewController: UIViewController?
@@ -31,6 +33,7 @@ class PostCollectionViewCell: UICollectionViewCell {
         heartImage.isHidden = true
         imageView.image = nil
         guard let post = post else { return }
+        likeService = LikeService(post: post)
         if let color = UIColor(hex: post.backgroundColor) {
             self.backgroundColor = color
         }
@@ -40,11 +43,18 @@ class PostCollectionViewCell: UICollectionViewCell {
             ImageLoader.load(postImg.mediumUrl) { self.imageView.image = $0 }
         }
         self.authorView.author = post.user
+        if post.liked {
+            likeButton.setImage(UIImage(systemName: "heart.fill")!, for: .normal)
+        } else {
+            likeButton.setImage(UIImage(systemName: "heart")!, for: .normal)
+        }
     }
 
     @IBAction
     func onTapLike() {
-        print("💞")
+        likeService?.execute { value in
+            print(value)
+        }
     }
 
     @IBAction

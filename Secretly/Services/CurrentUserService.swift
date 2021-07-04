@@ -32,16 +32,16 @@ struct CurrentUserService {
     }
 
     private func signUp(_ currentUser: CurrentUser, completion: @escaping (CurrentUser) -> Void) {
-        try? signUpEndpoint.create(model: currentUser.credentials()) { result in
+        signUpEndpoint.create(model: currentUser.credentials()) { result in
             storeToken(result)
-            DispatchQueue.main.async {  completion(currentUser) }
+            DispatchQueue.main.async { completion(currentUser) }
         }
     }
 
     private func signIn(_ currentUser: CurrentUser, completion: @escaping (CurrentUser) -> Void) {
-        try? signInEndpoint.create(model: currentUser.credentials()) { result in
+        signInEndpoint.create(model: currentUser.credentials()) { result in
             storeToken(result)
-            DispatchQueue.main.async {  completion(currentUser) }
+            DispatchQueue.main.async { completion(currentUser) }
         }
     }
 

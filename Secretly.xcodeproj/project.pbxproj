@@ -26,6 +26,8 @@
 		303379592675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift in Sources */ = {isa = PBXBuildFile; fileRef = 303379582675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift */; };
 		3033795B267537490066D94A /* FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033795A267537490066D94A /* FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift */; };
 		3033795D267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033795C267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift */; };
+		303A671A26917C58001D29BF /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A671926917C58001D29BF /* LikeService.swift */; };
+		303A671C26917C84001D29BF /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303A671B26917C84001D29BF /* Like.swift */; };
 		30455B9926902D2C007FF2FA /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30455B9826902D2C007FF2FA /* CommentsViewController.swift */; };
 		304E06C42674133D00A99128 /* String+isBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E06C32674133D00A99128 /* String+isBlank.swift */; };
 		304E06C626741A5100A99128 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E06C526741A5100A99128 /* UIColor+theme.swift */; };
@@ -95,6 +97,8 @@
 		303379582675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedCollectionViewController+UICollectionViewDataSource .swift"; sourceTree = "<group>"; };
 		3033795A267537490066D94A /* FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift"; sourceTree = "<group>"; };
 		3033795C267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift"; sourceTree = "<group>"; };
+		303A671926917C58001D29BF /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		303A671B26917C84001D29BF /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		30455B9826902D2C007FF2FA /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		304E06C32674133D00A99128 /* String+isBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isBlank.swift"; sourceTree = "<group>"; };
 		304E06C526741A5100A99128 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				30C77CAF266AD69700A888DC /* CurrentUserService.swift */,
 				304E06C726742BDA00A99128 /* CreatePostService.swift */,
 				304E06C926742CC500A99128 /* FeedService.swift */,
+				303A671926917C58001D29BF /* LikeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				307A30572661AD540020DF8B /* User.swift */,
 				30C77CB3266AF47300A888DC /* Credentials.swift */,
 				30C77CB5266AF48300A888DC /* CurrentUser.swift */,
+				303A671B26917C84001D29BF /* Like.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,10 +446,12 @@
 				E021984723FA35E00025C28E /* AppDelegate.swift in Sources */,
 				30337955267536980066D94A /* PostInputViewController+CLLocationManagerDelegate.swift in Sources */,
 				307A30562661AD480020DF8B /* Image.swift in Sources */,
+				303A671A26917C58001D29BF /* LikeService.swift in Sources */,
 				307A30582661AD540020DF8B /* User.swift in Sources */,
 				302B5849267E658E007133E6 /* NetworkError.swift in Sources */,
 				302B5846267E658E007133E6 /* AmacaConfig.swift in Sources */,
 				302BB61C267D7CC800FD74F5 /* PreviewPostVIew.swift in Sources */,
+				303A671C26917C84001D29BF /* Like.swift in Sources */,
 				3033795D267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift in Sources */,
 				30BC8BA82662CEBA00F7E6A5 /* Checksum.swift in Sources */,
 				30FD0E722659645A006E309A /* Faker.swift in Sources */,

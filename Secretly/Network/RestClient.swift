@@ -51,17 +51,37 @@ struct RestClient<T: Restable> {
         }
     }
 
-    func create(model: T, complete: @escaping (Result<T?, Error>) -> Void) throws {
-        let data = try encoder.encode(model)
+    func create(complete: @escaping (Result<T?, Error>) -> Void) {
+        client.post(path: path, body: nil) { result in
+            let newResult = result.flatMap { parse(data: $0) }
+            complete(newResult)
+        }
+    }
+
+    func create(model: T, complete: @escaping (Result<T?, Error>) -> Void) {
+        guard let data = try? encoder.encode(model) else {
+            complete(.failure(NetworkError.invalidRequest))
+            return
+        }
         client.post(path: path, body: data) { result in
             let newResult = result.flatMap { parse(data: $0) }
             complete(newResult)
         }
     }
 
-    func update(model: T, complete: @escaping (Result<T?, Error>) -> Void) throws {
-        let data = try encoder.encode(model)
+    func update(model: T, complete: @escaping (Result<T?, Error>) -> Void) {
+        guard let data = try? encoder.encode(model) else {
+            complete(.failure(NetworkError.invalidRequest))
+            return
+        }
         client.put(path: "\(path)/\(model.id)", body: data) { result in
+            let newResult = result.flatMap { parse(data: $0) }
+            complete(newResult)
+        }
+    }
+
+    func delete(complete: @escaping (Result<T?, Error>) -> Void) {
+        client.delete(path: path) { result in
             let newResult = result.flatMap { parse(data: $0) }
             complete(newResult)
         }
