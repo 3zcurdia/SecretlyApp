@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RequestBuilder {
+struct RequestBuilder: CustomDebugStringConvertible {
     enum ContentMode {
         case jsonApp
 
@@ -33,6 +33,35 @@ struct RequestBuilder {
     public var body: Data?
     public var headers: [String: String]?
     public var contentMode: ContentMode = .jsonApp
+
+    var debugDescription: String {
+        let urlString = url()?.absoluteString ?? "Invalid url at \(path)"
+        var desc = "\(method.uppercased()) \"\(urlString)\""
+        if let uheaders = headers {
+            for (key, value) in uheaders {
+                desc += " -H '\(key): \(value)'"
+            }
+        }
+        if let ubody = body, let bodyString = String(data: ubody, encoding: .utf8) {
+            desc += " -d $'\(bodyString)'"
+        }
+        return desc
+    }
+
+    static func build(method: String, baseUrl: String, path: String, body: Data?) -> URLRequest? {
+        var builder = RequestBuilder(baseUrl: baseUrl)
+        builder.method = method
+        builder.path = path
+        builder.body = body
+        if let token = AmacaConfig.shared.apiToken {
+            builder.headers = ["Authorization": "Bearer \(token)"]
+        }
+        #if DEBUG
+        print("=========================[REQUEST]==========================")
+        debugPrint(builder)
+        #endif
+        return builder.request()
+    }
 
     init(baseUrl: String) {
         self.urlComponents = URLComponents(string: baseUrl)!

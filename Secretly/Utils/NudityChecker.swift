@@ -8,8 +8,8 @@
 
 import UIKit
 
-struct NSFWContentError: Error, Titleable {
-    var title: String {
+struct NSFWContentError: Error, CustomStringConvertible, LocalizedError {
+    var description: String {
         get { "The image contains nudity" }
     }
 

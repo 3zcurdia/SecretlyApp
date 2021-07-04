@@ -39,11 +39,11 @@ enum StatusCode: Int {
         case .success:
             return .success(self.rawValue)
         case .clientError:
-            return .failure(ResponseError.clientError)
+            return .failure(NetworkError.clientError)
         case .serverError:
-            return .failure(ResponseError.serverError)
+            return .failure(NetworkError.serverError)
         default:
-            return .failure(ResponseError.invalidResponse)
+            return .failure(NetworkError.invalidResponse)
         }
     }
 }

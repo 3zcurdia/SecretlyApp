@@ -20,6 +20,14 @@ struct HttpResponse {
     }
 
     func result(for data: Data?) -> Result<Data?, Error> {
+        #if DEBUG
+        print("=========================[RESPONSE]==========================")
+        print("\(httpUrlResponse.statusCode) \(httpUrlResponse.url!)")
+        if let udata = data, let bodyString = String(data: udata, encoding: .utf8) {
+            debugPrint(udata)
+            print(bodyString)
+        }
+        #endif
         return status.result().map { _ in data }
     }
 }

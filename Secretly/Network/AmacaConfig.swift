@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias CustomError = Error & CustomStringConvertible
+
 struct AmacaConfig {
     static let shared = AmacaConfig()
     var host: String {
