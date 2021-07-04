@@ -12,6 +12,7 @@ import CoreLocation
 struct EmptyPostError: Error {}
 
 protocol PostInputViewDelegate {
+    func willCreatePost(post: Post?)
     func didCreatePost(post: Post?)
 }
 
@@ -123,6 +124,7 @@ class PostInputViewController: UIViewController, UINavigationControllerDelegate 
 
     private func createPost() throws {
         let post = try self.buildPost()
+        delegate?.willCreatePost(post: post)
         createPostService.create(post) { [unowned self] result in
             switch result {
             case .success(let post):

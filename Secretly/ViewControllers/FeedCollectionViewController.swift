@@ -51,9 +51,20 @@ class FeedCollectionViewController: UIViewController {
         postInputView.clear()
         present(postInputView, animated: true)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewComments",
+           let dest = segue.destination as? CommentsViewController,
+           let idx = collectionView.indexPathsForSelectedItems?.first {
+            dest.post = posts?[idx.row]
+        }
+    }
 }
 
 extension FeedCollectionViewController: PostInputViewDelegate {
+    func willCreatePost(post: Post?) {
+
+    }
     func didCreatePost(post: Post?) {
         guard let upost = post else { return }
         self.posts?.insert(upost, at: 0)

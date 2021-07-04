@@ -27,6 +27,7 @@
 		303379592675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift in Sources */ = {isa = PBXBuildFile; fileRef = 303379582675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift */; };
 		3033795B267537490066D94A /* FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033795A267537490066D94A /* FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift */; };
 		3033795D267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift in Sources */ = {isa = PBXBuildFile; fileRef = 3033795C267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift */; };
+		30455B9926902D2C007FF2FA /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30455B9826902D2C007FF2FA /* CommentsViewController.swift */; };
 		304E06C42674133D00A99128 /* String+isBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E06C32674133D00A99128 /* String+isBlank.swift */; };
 		304E06C626741A5100A99128 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E06C526741A5100A99128 /* UIColor+theme.swift */; };
 		304E06C826742BDA00A99128 /* CreatePostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304E06C726742BDA00A99128 /* CreatePostService.swift */; };
@@ -96,6 +97,7 @@
 		303379582675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedCollectionViewController+UICollectionViewDataSource .swift"; sourceTree = "<group>"; };
 		3033795A267537490066D94A /* FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedCollectionViewController+UICollectionViewDataSourcePrefetching.swift"; sourceTree = "<group>"; };
 		3033795C267537B40066D94A /* FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedCollectionViewController+UICollectionViewDelegateFlowLayout .swift"; sourceTree = "<group>"; };
+		30455B9826902D2C007FF2FA /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		304E06C32674133D00A99128 /* String+isBlank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isBlank.swift"; sourceTree = "<group>"; };
 		304E06C526741A5100A99128 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		304E06C726742BDA00A99128 /* CreatePostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostService.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				302BB621267E38E800FD74F5 /* PostInputViewController+UIImagePickerControllerDelegate.swift */,
 				302BB623267E3A8700FD74F5 /* PostInputViewController+UIColorPickerViewControllerDelegate.swift */,
 				302BB625267E447900FD74F5 /* PostInputViewController+UITextFieldDelegate.swift */,
+				30455B9826902D2C007FF2FA /* CommentsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				30B9B93B268CA9E6007B1942 /* UIImage+PixelBuffer.swift in Sources */,
 				303379592675371C0066D94A /* FeedCollectionViewController+UICollectionViewDataSource .swift in Sources */,
 				304E06CA26742CC500A99128 /* FeedService.swift in Sources */,
+				30455B9926902D2C007FF2FA /* CommentsViewController.swift in Sources */,
 				302BB61F267E316900FD74F5 /* PostInputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

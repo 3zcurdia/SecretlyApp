@@ -21,6 +21,8 @@ class PostCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var likeState: UIImageView!
     @IBOutlet weak var commentCounter: UILabel!
 
+    weak var viewController: UIViewController?
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -37,5 +39,10 @@ class PostCollectionViewCell: UICollectionViewCell {
             ImageLoader.load(postImg.mediumUrl) { img in self.imageView.image = img }
         }
         self.authorView.author = post.user
+    }
+
+    @IBAction
+    func onTapComment() {
+        viewController?.performSegue(withIdentifier: "viewComments", sender: self)
     }
 }

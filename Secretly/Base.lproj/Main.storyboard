@@ -121,11 +121,28 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="TPK-s3-R7J" id="EFZ-ci-ff1"/>
+                        <segue destination="5Fy-xN-6hL" kind="show" identifier="viewComments" id="6qE-bd-y6r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svI-0p-kLa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2984.057971014493" y="135.9375"/>
+        </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="gBk-gK-fpU">
+            <objects>
+                <viewController id="5Fy-xN-6hL" customClass="CommentsViewController" customModule="Secretly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YNf-DC-LSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8UP-rQ-UIv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EHq-bg-PcZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wlB-uz-VQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4077" y="134"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4Qh-ze-j8F">
