@@ -23,10 +23,13 @@ struct HttpResponse {
         #if DEBUG
         print("=========================[RESPONSE]==========================")
         print("\(httpUrlResponse.statusCode) \(httpUrlResponse.url!)")
-        if let udata = data, let bodyString = String(data: udata, encoding: .utf8) {
+        if let udata = data {
             debugPrint(udata)
-            print(bodyString)
+//            if let bodyString = String(data: udata, encoding: .utf8) {
+//                print(bodyString)
+//            }
         }
+
         #endif
         return status.result().map { _ in data }
     }

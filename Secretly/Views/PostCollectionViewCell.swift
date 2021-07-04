@@ -15,10 +15,10 @@ class PostCollectionViewCell: UICollectionViewCell {
            updateView()
         }
     }
+    @IBOutlet weak var heartImage: UIImageView!
     @IBOutlet weak var authorView: AuthorView!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var likeState: UIImageView!
     @IBOutlet weak var commentCounter: UILabel!
 
     weak var viewController: UIViewController?
@@ -28,6 +28,7 @@ class PostCollectionViewCell: UICollectionViewCell {
     }
 
     func updateView() {
+        heartImage.isHidden = true
         imageView.image = nil
         guard let post = post else { return }
         if let color = UIColor(hex: post.backgroundColor) {
@@ -36,9 +37,14 @@ class PostCollectionViewCell: UICollectionViewCell {
         self.contentLabel.text = post.content
         self.commentCounter.text = String(describing: post.commentsCount ?? 0)
         if let postImg = post.image {
-            ImageLoader.load(postImg.mediumUrl) { img in self.imageView.image = img }
+            ImageLoader.load(postImg.mediumUrl) { self.imageView.image = $0 }
         }
         self.authorView.author = post.user
+    }
+
+    @IBAction
+    func onTapLike() {
+        print("💞")
     }
 
     @IBAction
