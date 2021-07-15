@@ -9,5 +9,10 @@
 import Foundation
 
 struct Like: Restable {
-    var id: String { "" }
+    var id: Int?
+    let user: User
+    let likeableId: Int
+    let likeableType: String
+    let createdAt: Date?
+    let updatedAt: Date?
 }
